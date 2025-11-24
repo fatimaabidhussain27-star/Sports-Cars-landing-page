@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Velocity | Premium Car Dealership | Luxury SUVs | Vintage Cars</title>
+    <meta name="description" content="Cosmic Velocity - Your premier car dealership for luxury SUVs, vintage cars, sports cars, and hybrids. Find Nissan Skyline R34, BMW E30, McLaren P1, Toyota Prius and more. Get accurate car valuation and the best car quotes.">
+    <meta name="keywords" content="car dealership, car dealer, autotempest, dealership, dealerships, luxury suv, car valuation, car and driver, pt cruiser, mclaren p1, car shop, nissan skyline r34, nissan skyline gtr r34, toyota prius hybrid, old cars, bmw e30, cool cars, nada used car values, vintage cars, fastest car in the world, go auto, carvana near me, car quotes, pontiac g8">
+    <meta name="author" content="Cosmic Velocity">
+    <meta property="og:title" content="Cosmic Velocity | Premium Car Dealership">
+    <meta property="og:description" content="Your premier destination for luxury SUVs, vintage cars, sports cars, and hybrids with accurate car valuation.">
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cosmic-purple: #8a2be2;
+            --nebula-blue: #4169e1;
+            --starlight: #e6e6fa;
+            --deep-space: #0a0a2a;
+            --galaxy-black: #000033;
+            --supernova: #ffd700;
+            --mars-red: #ff4500;
+            --comet: #00bfff;
+        }
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, var(--deep-space) 0%, var(--galaxy-black) 100%);
+            color: var(--starlight);
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: rgba(10, 10, 42, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(10, 10, 42, 0.95);
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.2);
+            padding: 10px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 28px;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--comet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link {
+            color: var(--starlight) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--comet));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--comet) !important;
+        }
+        
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.2) 0%, rgba(10, 10, 42, 0.8) 70%);
+            z-index: -1;
+        }
+        
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            background: linear-gradient(45deg, var(--starlight), var(--comet), var(--supernova));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--starlight);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .hero-buttons {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--nebula-blue));
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-primary:hover:before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 80px 0 50px;
+            font-weight: bold;
+            color: var(--starlight);
+            position: relative;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-title.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--cosmic-purple), var(--comet));
+            margin: 15px auto;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 100%;
+            background: rgba(20, 20, 60, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .card.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.5);
+        }
+        
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-title {
+            color: var(--starlight);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            color: var(--supernova);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .btn-outline-primary {
+            color: var(--comet);
+            border-color: var(--comet);
+            border-radius: 30px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-outline-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--comet));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-outline-primary:hover:before {
+            width: 100%;
+        }
+        
+        .btn-outline-primary:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(138, 43, 226, 0.3);
+            border: 1px solid var(--cosmic-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--starlight);
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--cosmic-purple);
+            color: white;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid var(--cosmic-purple);
+            border-radius: 5px;
+            margin: 0 10px;
+            padding: 5px;
+            background: rgba(10, 10, 42, 0.5);
+            color: var(--starlight);
+        }
+        
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: rgba(20, 20, 60, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1050;
+            transition: right 0.4s ease;
+            padding: 20px;
+            overflow-y: auto;
+            border-left: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1040;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cart-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--starlight);
+        }
+        
+        .cart-item-price {
+            color: var(--supernova);
+            font-weight: bold;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--mars-red);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+        
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            text-align: center;
+            color: var(--starlight);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            font-weight: bold;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--starlight);
+        }
+        
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--cosmic-purple);
+        }
+        
+        .cart-badge {
+            background: var(--mars-red);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        
+        .cart-icon-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .custom-alert {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: none;
+            animation: slideInRight 0.5s ease;
+            background: rgba(20, 20, 60, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            color: var(--starlight);
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .alert-success {
+            border-left: 4px solid var(--comet);
+        }
+        
+        .alert-info {
+            border-left: 4px solid var(--supernova);
+        }
+        
+        .alert-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: inherit;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        
+        .alert-close:hover {
+            opacity: 1;
+        }
+        
+        .about-section {
+            background: radial-gradient(circle at center, rgba(65, 105, 225, 0.1) 0%, rgba(10, 10, 42, 0.8) 70%);
+            padding: 100px 0;
+            border-radius: 0 0 50px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+        }
+        
+        .about-video {
+            width: 100%;
+            height: 450px;
+            display: block;
+        }
+        
+        .testimonial-card {
+            background: rgba(20, 20, 60, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            height: 100%;
+        }
+        
+        .testimonial-card.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--starlight);
+            margin-bottom: 20px;
+        }
+        
+        .client-name {
+            font-weight: bold;
+            color: var(--starlight);
+        }
+        
+        .client-position {
+            color: var(--comet);
+            font-size: 0.9rem;
+        }
+        
+        .services-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background: rgba(20, 20, 60, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            height: 100%;
+        }
+        
+        .service-item.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(138, 43, 226, 0.4);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--comet);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+        
+        .contact-section {
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(10, 10, 42, 0.9) 70%);
+            padding: 100px 0;
+            border-radius: 50px 50px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form {
+            background: rgba(20, 20, 60, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            background: rgba(10, 10, 42, 0.5);
+            color: var(--starlight);
+        }
+        
+        .form-control:focus {
+            border-color: var(--comet);
+            box-shadow: 0 0 0 0.25rem rgba(0, 191, 255, 0.25);
+            background: rgba(10, 10, 42, 0.7);
+        }
+        
+        footer {
+            background: rgba(10, 10, 42, 0.95);
+            color: var(--starlight);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        footer h5 {
+            color: var(--comet);
+            margin-bottom: 25px;
+        }
+        
+        footer a {
+            color: var(--starlight);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--comet);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(138, 43, 226, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        .social-icons a:hover {
+            background: var(--cosmic-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--comet));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .specs-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .specs-table .spec-name {
+            font-weight: bold;
+            width: 40%;
+            color: var(--starlight);
+        }
+        
+        .specs-table td:not(.spec-name) {
+            color: var(--comet);
+        }
+        
+        .stats-section {
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(10, 10, 42, 0.9) 70%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stat-item.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--supernova);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--starlight);
+        }
+        
+        .car-model-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, var(--cosmic-purple), var(--comet));
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+            z-index: 1;
+        }
+        
+        .car-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .car-feature i {
+            color: var(--comet);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        
+        .car-dealership-keywords {
+            background: rgba(20, 20, 60, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .keyword-tag {
+            display: inline-block;
+            background: rgba(138, 43, 226, 0.2);
+            color: var(--comet);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .keyword-tag:hover {
+            background: var(--cosmic-purple);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hero-video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+        }
+        
+        .hero-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                margin: 60px 0 30px;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        
+        <video autoplay muted loop id="bg-video">
+            <source src="car.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="video-overlay"></div>
+
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-rocket me-2"></i>Cosmic Velocity
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#models">Models</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-light position-relative" id="cart-toggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Custom Alert -->
+    <div class="custom-alert alert alert-dismissible fade show" role="alert" style="display: none;">
+        <div class="d-flex align-items-center">
+            <i class="fas fa-check-circle me-2"></i>
+            <span class="alert-message">Product added to cart successfully!</span>
+            <button type="button" class="alert-close ms-auto" data-bs-dismiss="alert">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Experience Galactic Performance</h1>
+                    <p class="hero-subtitle">Discover our exclusive collection of cosmic sports cars, engineered for interstellar travel and crafted with celestial precision.</p>
+                    <div class="mt-4 hero-buttons">
+                        <button class="btn btn-primary" id="explore-models-btn">Explore Models</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center floating">
+                    <!-- <div class="hero-video-container">
+                        <video autoplay muted loop class="hero-video">
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-in-a-race-track-34555-large.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-delay="0">
+                        <div class="stat-number">250+</div>
+                        <div class="stat-label">Cars Sold</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-delay="200">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Light Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-delay="400">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Customer Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-delay="600">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Stellar Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="py-5" id="models">
+        <div class="container">
+            <h2 class="section-title">Our Galactic Models</h2>
+            
+            <!-- Products Grid -->
+            <div class="row" id="products-grid">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="coupe" data-price="129999" data-engine="v8" data-delay="0">
+                        <span class="car-model-badge">Chevrolet Corvette</span>
+                        <img src="pic1 (1).jpeg" class="card-img-top" alt="Vortex GT">
+                        <div class="card-body">
+                            <h5 class="card-title">Chevrolet Corvette</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <p class="card-text">America's Sports Car: It's an iconic, high-performance two-seater produced by Chevrolet since 1953.
+
+
+Mid-Engine Shift: The latest C8 generation moved the engine behind the driver (mid-engine) for better balance and race car handling.
+
+Racing Legacy: It has a long history of success in motorsports, notably winning the prestigious 24 Hours of Le Mans multiple times.
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>650 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 3.2s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Quantum Fuel</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$129,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Nebula Vortex">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Nebula Vortex">
+                                <button class="quantity-btn plus" data-product="Nebula Vortex">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Nebula Vortex" data-price="129999" data-image="pic1 (1).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="convertible" data-price="149999" data-engine="v10" data-delay="100">
+                        <span class="car-model-badge">Pagani Huayra</span>
+                        <img src="pic1 (2).jpeg" class="card-img-top" alt="Apex Roadster">
+                        <div class="card-body">
+                            <h5 class="card-title">Pagani Huayra</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <p class="card-text">
+
+ Italian Hypercar: Built by Horacio Pagani, it's a hand-assembled, limited-production masterpiece.
+
+ God of Wind: Named after the Incan god of wind (Huayra Tata).
+
+ Twin-Turbo V12: Powered by a bespoke Mercedes-AMG twin-turbo V12 engine (700+ horsepower).
+
+Active Aero: Features unique four-flap active aerodynamics that constantly adjust for downforce and braking.</p>
+                            
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>700 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 2.9s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Quantum Fuel</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$149,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Stellar Apex">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Stellar Apex">
+                                <button class="quantity-btn plus" data-product="Stellar Apex">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Stellar Apex" data-price="149999" data-image="pic1 (2).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="coupe" data-price="189999" data-engine="v12" data-delay="200">
+                        <span class="car-model-badge">Porsche Taycan</span>
+                        <img src="pic1 (3).jpeg" class="card-img-top" alt="Nitro X">
+                        <div class="card-body">
+                            <h5 class="card-title"> Porsche Taycan</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <p class="card-text">Fully Electric: Porsche's first pure EV, featuring high-performance battery technology.
+
+ True Porsche Performance: Delivers blistering acceleration and precise handling, maintaining the brand's sporty DNA.
+
+ 800-Volt System: Uses a unique 800V architecture for extremely fast DC charging.
+
+
+ Four-Door Sports Sedan: Offers the practicality of a four-door sedan (or Cross/Sport Turismo wagon) with the soul of a sports car</p>
+                            
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>850 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 2.5s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Quantum Fuel</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$189,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Cosmic Nitro">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Cosmic Nitro">
+                                <button class="quantity-btn plus" data-product="Cosmic Nitro">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Cosmic Nitro" data-price="189999" data-image="pic1 (3).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="suv" data-price="89999" data-engine="v6" data-delay="0">
+                        <span class="car-model-badge">Range Rover</span>
+                        <img src="pic1 (4).jpeg" class="card-img-top" alt="Luxury SUV">
+                        <div class="card-body">
+                            <h5 class="card-title">Range Rover</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(47)</span>
+                            </div>
+                            <p class="card-text">British Luxury SUV: The original luxury SUV, built by Land Rover since 1970.
+
+Opulent Comfort: Known for its high-end, elegant interior and smooth, serene ride quality.
+
+ True 4x4 Capability: Features All-Wheel Drive (AWD) and Terrain Response systems for serious off-road prowess.
+
+ Air Suspension: Uses Electronic Air Suspension to raise or lower the vehicle for off-roading or easy entry/exit.</p>
+                            
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>450 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 4.8s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Hybrid Option</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$89,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Galaxy Voyager SUV">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Galaxy Voyager SUV">
+                                <button class="quantity-btn plus" data-product="Galaxy Voyager SUV">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Galaxy Voyager SUV" data-price="89999" data-image="pic1 (4).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="vintage" data-price="124999" data-engine="v8" data-delay="100">
+                        <span class="car-model-badge">Mercedes-Benz EQS
+</span>
+                        <img src="pic1 (5).jpeg" class="card-img-top" alt="Vintage Car">
+                        <div class="card-body">
+                            <h5 class="card-title">Mercedes-Benz EQS
+</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(18)</span>
+                            </div>
+                            <p class="card-text"> Electric Flagship: Mercedes-Benz's top-tier, all-electric luxury sedan.2 Ultimate Luxury & Tech: Features an opulent, quiet cabin with the optional massive MBUX Hyperscreen dashboard. Aero Master: One of the most aerodynamic production cars in the world (low 4$C_d$ value) to maximize driving range.Long Range & Fast Charge: Designed for long-distance cruising with excellent range and fast DC charging capability.6</p>
+                            
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>425 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 5.2s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Premium Fuel</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$124,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Classic Starlight '67">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Classic Starlight '67">
+                                <button class="quantity-btn plus" data-product="Classic Starlight '67">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Classic Starlight '67" data-price="124999" data-image="pic1 (5).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card" data-category="hybrid" data-price="45999" data-engine="hybrid" data-delay="200">
+                        <span class="car-model-badge">BMW Z4</span>
+                        <img src="pic1 (6).jpeg" class="card-img-top" alt="Hybrid Car">
+                        <div class="card-body">
+                            <h5 class="card-title">BMW Z4</h5>
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(63)</span>
+                            </div>
+                            <p class="card-text">German Roadster: BMW's two-seater, two-door convertible, built for spirited driving.
+
+ Open-Air Focus: Features a soft-top convertible roof (current generation) for an engaging driving experience.
+
+ Signature Engines: Available with powerful turbocharged four-cylinder or the legendary inline six-cylinder engines.
+
+Rear-Wheel Drive: Emphasizes balanced performance and classic sports car dynamics.</p>
+                            
+                            <div class="car-features mb-3">
+                                <div class="car-feature">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>215 HP</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>0-60 mph: 7.1s</span>
+                                </div>
+                                <div class="car-feature">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>55 MPG Combined</span>
+                                </div>
+                            </div>
+                            
+                            <div class="price">$45,999</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus" data-product="Quantum Hybrid Eco">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" data-product="Quantum Hybrid Eco">
+                                <button class="quantity-btn plus" data-product="Quantum Hybrid Eco">+</button>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary add-to-cart" data-product="Quantum Hybrid Eco" data-price="45999" data-image="pic1 (6).jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4>Your Cart</h4>
+            <button class="btn-close" id="close-cart"></button>
+        </div>
+        
+        <div id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        
+        <div class="cart-total" id="cart-total" style="display: none;">
+            Total: $<span id="total-amount">0.00</span>
+        </div>
+        
+        <button class="btn btn-primary checkout-btn" id="checkout-btn" style="display: none;">Proceed to Checkout</button>
+        <button class="btn btn-outline-primary w-100 mt-2" id="continue-shopping" style="display: none;">Continue Shopping</button>
+    </div>
+
+   <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="about.png" alt="Car manufacturing" class="img-fluid rounded shadow" style="border: 2px solid rgba(138, 43, 226, 0.5); box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Our Cosmic Legacy</h2>
+                    <p>Founded in 2008, Cosmic Velocity emerged from a passion for interstellar automotive excellence and a vision to create the galaxy's most exhilarating sports cars. Our founder, Astra Nova, believed that driving should be an experience that transcends planetary boundaries.</p>
+                    <p>Today, we continue that tradition by combining cutting-edge cosmic technology with meticulous craftsmanship. Each Cosmic Velocity vehicle is engineered for peak performance while maintaining the celestial comfort our clients expect.</p>
+                    <p>We're committed to innovation, sustainability, and pushing the boundaries of automotive design, ensuring that every Cosmic Velocity car delivers an out-of-this-world driving experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Stellar Services</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="0">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Cosmic Builds</h4>
+                        <p>We create bespoke vehicles tailored to your specific interstellar performance requirements and aesthetic preferences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Quantum Tuning</h4>
+                        <p>Enhance your vehicle's capabilities with our expert quantum performance tuning and modification services.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Stellar Warranty</h4>
+                        <p>Comprehensive warranty packages to protect your investment and ensure peace of mind across the galaxy.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="0">
+                        <div class="feature-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h4>Celestial Service</h4>
+                        <p>Premium maintenance and care services with pickup and delivery for your convenience anywhere in the cosmos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo-alt"></i>
+                        </div>
+                        <h4>Trade-In Program</h4>
+                        <p>Upgrade to the latest model with our favorable trade-in program for existing Cosmic Velocity owners.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-item" data-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h4>Orbital Experience</h4>
+                        <p>Exclusive access to professional driving instructors and orbital track days to master your vehicle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5" style="background: radial-gradient(circle at center, rgba(65, 105, 225, 0.1) 0%, rgba(10, 10, 42, 0.8) 70%);">
+        <div class="container">
+            <h2 class="section-title">What Our Cosmic Clients Say</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="0">
+                        <p class="testimonial-text">"The Nebula Vortex exceeded all my expectations. The performance is astronomical, and the attention to detail is remarkable. Cosmic Velocity delivered an exceptional experience from start to finish."</p>
+                        <div class="client-name">Orion Stellar</div>
+                        <div class="client-position">Nebula Vortex Owner</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="100">
+                        <p class="testimonial-text">"I've owned several sports cars, but the Stellar Apex is in a galaxy of its own. The combination of raw power and refined luxury is perfectly balanced. The customer service was out of this world."</p>
+                        <div class="client-name">Lyra Cosmos</div>
+                        <div class="client-position">Stellar Apex Owner</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="200">
+                        <p class="testimonial-text">"The custom build process with Cosmic Velocity was seamless. They listened to my specific requirements and delivered a Cosmic Nitro that perfectly matches my vision. The performance is simply stellar."</p>
+                        <div class="client-name">Nova Galaxy</div>
+                        <div class="client-position">Cosmic Nitro Owner</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="0">
+                        <p class="testimonial-text">"As a car dealership owner myself, I'm impressed with Cosmic Velocity's attention to detail. Their car valuation process is transparent and their luxury SUV selection is unparalleled."</p>
+                        <div class="client-name">Marcus Dealership</div>
+                        <div class="client-position">AutoTempest Partner</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="100">
+                        <p class="testimonial-text">"I was looking for vintage cars and found the perfect BMW E30 at Cosmic Velocity. Their knowledge of old cars and commitment to quality is exceptional."</p>
+                        <div class="client-name">Elena Vintage</div>
+                        <div class="client-position">Classic Car Collector</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card" data-delay="200">
+                        <p class="testimonial-text">"The Toyota Prius Hybrid I purchased exceeded my expectations. Cosmic Velocity's car shop provided excellent service and their NADA used car values were spot on."</p>
+                        <div class="client-name">Dr. Aris Hybrid</div>
+                        <div class="client-position">Environmental Scientist</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required id="contact-name" pattern="[A-Za-z\s]+" title="Please enter only letters">
+                                <div class="invalid-feedback" id="name-error" style="display: none;">
+                                    Please enter a valid name (letters only)
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required id="contact-email">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Subject" required id="contact-subject">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required id="contact-message"></textarea>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-rocket me-2"></i>Cosmic Velocity</h5>
+                    <p>Engineering the galaxy's most exhilarating sports cars with cutting-edge cosmic technology and uncompromising craftsmanship.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="social-link" data-platform="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" data-platform="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" data-platform="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" data-platform="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Cosmic Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="footer-link">Home</a></li>
+                        <li><a href="#models" class="footer-link">Models</a></li>
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#services" class="footer-link">Services</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact Coordinates</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Nebula Drive, Galaxy Center</p>
+                    <p><i class="fas fa-phone me-2"></i> (555) 867-5309</p>
+                    <p><i class="fas fa-envelope me-2"></i> contact@cosmicvelocity.com</p>
+                    <p><i class="fas fa-clock me-2"></i> Mon-Sat: 9am-7pm, Sun: 11am-5pm</p>
+                    <button class="btn btn-outline-light btn-sm mt-2" id="get-directions">Get Coordinates</button>
+                </div>
+            </div>
+            <hr style="background: rgba(138, 43, 226, 0.3);">
+            <div class="text-center py-3">
+                <p class="mb-0">&copy; 2023 Cosmic Velocity. All rights reserved across the universe.</p>
+                <button class="btn btn-link text-light p-0 mt-1" id="back-to-top">Return to Orbit</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Create stars background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random size between 1-3px
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration between 2-5 seconds
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            
+            // Shopping Cart Functionality
+            let cart = [];
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const cartToggle = document.getElementById('cart-toggle');
+            const closeCart = document.getElementById('close-cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const totalAmount = document.getElementById('total-amount');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const continueShoppingBtn = document.getElementById('continue-shopping');
+            const cartCount = document.getElementById('cart-count');
+
+            // Toggle Cart Sidebar
+            cartToggle.addEventListener('click', () => {
+                cartSidebar.classList.add('open');
+                cartOverlay.classList.add('active');
+            });
+
+            closeCart.addEventListener('click', () => {
+                cartSidebar.classList.remove('open');
+                cartOverlay.classList.remove('active');
+            });
+
+            cartOverlay.addEventListener('click', () => {
+                cartSidebar.classList.remove('open');
+                cartOverlay.classList.remove('active');
+            });
+
+            continueShoppingBtn.addEventListener('click', () => {
+                cartSidebar.classList.remove('open');
+                cartOverlay.classList.remove('active');
+            });
+
+            // Custom Alert Function
+            function showAlert(message, type = 'success') {
+                const alert = document.querySelector('.custom-alert');
+                const alertMessage = alert.querySelector('.alert-message');
+                const alertIcon = alert.querySelector('i');
+                
+                // Set alert content
+                alertMessage.textContent = message;
+                
+                // Set alert type
+                alert.className = `custom-alert alert alert-dismissible fade show`;
+                
+                if (type === 'success') {
+                    alert.classList.add('alert-success');
+                    alertIcon.className = 'fas fa-check-circle me-2';
+                } else {
+                    alert.classList.add('alert-info');
+                    alertIcon.className = 'fas fa-info-circle me-2';
+                }
+                
+                // Show alert
+                alert.style.display = 'block';
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+                
+                // Add manual close functionality
+                const closeBtn = alert.querySelector('.alert-close');
+                closeBtn.onclick = function() {
+                    alert.style.display = 'none';
+                };
+            }
+
+            // Add to Cart Functionality
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    const productPrice = parseFloat(this.getAttribute('data-price'));
+                    const productImage = this.getAttribute('data-image');
+                    const quantityInput = document.querySelector(`.quantity-input[data-product="${productName}"]`);
+                    const quantity = parseInt(quantityInput.value);
+                    
+                    // Check if product already in cart
+                    const existingItem = cart.find(item => item.name === productName);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                    } else {
+                        cart.push({
+                            name: productName,
+                            price: productPrice,
+                            image: productImage,
+                            quantity: quantity
+                        });
+                    }
+                    
+                    updateCart();
+                    showAlert(`${productName} added to cart successfully!`);
+                    
+                    // Reset quantity to 1
+                    quantityInput.value = 1;
+                });
+            });
+
+            // Quantity Controls
+            document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    const quantityInput = document.querySelector(`.quantity-input[data-product="${productName}"]`);
+                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                });
+            });
+
+            document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.getAttribute('data-product');
+                    const quantityInput = document.querySelector(`.quantity-input[data-product="${productName}"]`);
+                    if (parseInt(quantityInput.value) > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                    }
+                });
+            });
+
+            // Update Cart Display
+            function updateCart() {
+                // Update cart count
+                const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = totalItems;
+                
+                // Update cart items
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                    cartTotal.style.display = 'none';
+                    checkoutBtn.style.display = 'none';
+                    continueShoppingBtn.style.display = 'none';
+                } else {
+                    cartItems.innerHTML = '';
+                    let total = 0;
+                    
+                    cart.forEach((item, index) => {
+                        const itemTotal = item.price * item.quantity;
+                        total += itemTotal;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">${item.name}</div>
+                                <div class="cart-item-price">$${item.price.toLocaleString()} x ${item.quantity}</div>
+                            </div>
+                            <button class="remove-item" data-index="${index}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+                    
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            const removedItem = cart[index];
+                            cart.splice(index, 1);
+                            updateCart();
+                            showAlert(`${removedItem.name} removed from cart`, 'info');
+                        });
+                    });
+                    
+                    // Update total
+                    totalAmount.textContent = total.toLocaleString();
+                    cartTotal.style.display = 'block';
+                    checkoutBtn.style.display = 'block';
+                    continueShoppingBtn.style.display = 'block';
+                }
+            }
+
+            // Checkout Button
+checkoutBtn.addEventListener('click', () => {
+    if (cart.length > 0) {
+        // Show a more detailed checkout modal
+        showCheckoutModal();
+    }
+});
+
+// Checkout Modal Function
+function showCheckoutModal() {
+    // Create checkout modal
+    const modalHTML = `
+        <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: rgba(20, 20, 60, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(138, 43, 226, 0.5); color: var(--starlight);">
+                    <div class="modal-header" style="border-bottom: 1px solid rgba(138, 43, 226, 0.3);">
+                        <h5 class="modal-title" id="checkoutModalLabel" style="color: var(--comet); font-family: 'Orbitron', sans-serif;">Cosmic Checkout</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 style="color: var(--comet);">Order Summary</h6>
+                                <div id="checkout-items">
+                                    ${generateCheckoutItemsHTML()}
+                                </div>
+                                <hr style="background: rgba(138, 43, 226, 0.3);">
+                                <div class="d-flex justify-content-between">
+                                    <strong>Total:</strong>
+                                    <strong style="color: var(--supernova);">$${calculateTotal().toLocaleString()}</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 style="color: var(--comet);">Payment Details</h6>
+                                <form id="payment-form">
+                                    <div class="mb-3">
+                                        <label for="card-name" class="form-label">Name on Card</label>
+                                        <input type="text" class="form-control" id="card-name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="card-number" class="form-label">Card Number</label>
+                                        <input type="text" class="form-control" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="card-expiry" class="form-label">Expiry Date</label>
+                                            <input type="text" class="form-control" id="card-expiry" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="card-cvc" class="form-label">CVC</label>
+                                            <input type="text" class="form-control" id="card-cvc" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border-top: 1px solid rgba(138, 43, 226, 0.3);">
+                        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="confirm-payment">Confirm Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Show modal
+    const checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'));
+    checkoutModal.show();
+    
+    // Handle payment confirmation
+    document.getElementById('confirm-payment').addEventListener('click', function() {
+        const cardName = document.getElementById('card-name').value.trim();
+        const cardNumber = document.getElementById('card-number').value.trim();
+        const cardExpiry = document.getElementById('card-expiry').value.trim();
+        const cardCvc = document.getElementById('card-cvc').value.trim();
+        const email = document.getElementById('email').value.trim();
+        
+        // Basic validation
+        if (!cardName || !cardNumber || !cardExpiry || !cardCvc || !email) {
+            showAlert('Please fill in all payment details.', 'info');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showAlert('Please enter a valid email address.', 'info');
+            return;
+        }
+        
+        // Simulate payment processing
+        this.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Processing...';
+        this.disabled = true;
+        
+        setTimeout(() => {
+            // Payment success
+            checkoutModal.hide();
+            showAlert('Payment successful! Your cosmic vehicles are being prepared for delivery.', 'success');
+            
+            // Clear cart
+            cart = [];
+            updateCart();
+            cartSidebar.classList.remove('open');
+            cartOverlay.classList.remove('active');
+            
+            // Remove modal from DOM
+            document.getElementById('checkoutModal').remove();
+        }, 3000);
+    });
+    
+    // Remove modal from DOM when closed
+    document.getElementById('checkoutModal').addEventListener('hidden.bs.modal', function() {
+        this.remove();
+    });
+}
+
+// Helper function to generate checkout items HTML
+function generateCheckoutItemsHTML() {
+    let html = '';
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        html += `
+            <div class="d-flex justify-content-between mb-2">
+                <span>${item.name} x${item.quantity}</span>
+                <span>$${itemTotal.toLocaleString()}</span>
+            </div>
+        `;
+    });
+    return html;
+}
+
+// Helper function to calculate total
+function calculateTotal() {
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+
+            // Contact Form Validation and Submission
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    
+    // Validation
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Name validation (only alphabets)
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (name === '') {
+        isValid = false;
+        errorMessage = 'Please enter your name.';
+        document.getElementById('name-error').style.display = 'none';
+    } else if (!nameRegex.test(name)) {
+        isValid = false;
+        errorMessage = 'Please enter a valid name (letters only).';
+        document.getElementById('name-error').style.display = 'block';
+        document.getElementById('contact-name').classList.add('is-invalid');
+    } else {
+        document.getElementById('name-error').style.display = 'none';
+        document.getElementById('contact-name').classList.remove('is-invalid');
+    }
+    
+    if (isValid && email === '') {
+        isValid = false;
+        errorMessage = 'Please enter your email address.';
+    } else if (isValid && !isValidEmail(email)) {
+        isValid = false;
+        errorMessage = 'Please enter a valid email address.';
+    } else if (isValid && subject === '') {
+        isValid = false;
+        errorMessage = 'Please enter a subject.';
+    } else if (isValid && message === '') {
+        isValid = false;
+        errorMessage = 'Please enter your message.';
+    }
+    
+    if (!isValid) {
+        showAlert(errorMessage, 'info');
+        return;
+    }
+    
+    // If validation passes
+    showAlert(`Thank you ${name}! Your message has been sent successfully. We will get back to you soon.`, 'success');
+    this.reset();
+});
+
+// Add real-time validation for the name field
+document.getElementById('contact-name').addEventListener('input', function() {
+    const name = this.value.trim();
+    const nameRegex = /^[A-Za-z\s]*$/; // Allow empty or alphabetic input
+    
+    if (!nameRegex.test(name)) {
+        this.classList.add('is-invalid');
+        document.getElementById('name-error').style.display = 'block';
+    } else {
+        this.classList.remove('is-invalid');
+        document.getElementById('name-error').style.display = 'none';
+    }
+});
+
+            // Email validation function
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Hero Section Buttons
+            document.getElementById('explore-models-btn').addEventListener('click', () => {
+                document.querySelector('#models').scrollIntoView({ behavior: 'smooth' });
+                showAlert('Browsing our cosmic models!', 'info');
+            });
+
+            // Footer Buttons
+            document.getElementById('get-directions').addEventListener('click', () => {
+                showAlert('Opening coordinates to our showroom...', 'info');
+                // In a real application, this would open a map with directions
+            });
+
+            document.getElementById('back-to-top').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Footer Links
+            document.querySelectorAll('.footer-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    showAlert(`Loading ${page}...`, 'info');
+                    // In a real application, this would navigate to the respective page
+                });
+            });
+
+            // Social Media Links
+            document.querySelectorAll('.social-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const platform = this.getAttribute('data-platform');
+                    showAlert(`Opening our ${platform} page...`, 'info');
+                    // In a real application, this would open the social media page
+                });
+            });
+
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+                
+                // Animation on scroll
+                animateOnScroll();
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Animation on scroll function
+            function animateOnScroll() {
+                const sections = document.querySelectorAll('.section-title, .card, .service-item, .testimonial-card, .stat-item');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight - 100) {
+                        const delay = section.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            section.classList.add('animate');
+                        }, delay);
+                    }
+                });
+            }
+            
+            // Initialize animations
+            animateOnScroll();
+        });
+    </script>
+    <!-- Add this button to your HTML, just before the closing </body> tag -->
+<button id="scrollToTopBtn" class="scroll-to-top-btn">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<style>
+    .scroll-to-top-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--cosmic-purple), var(--nebula-blue));
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(138, 43, 226, 0.5);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .scroll-to-top-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(138, 43, 226, 0.7);
+        background: linear-gradient(45deg, var(--nebula-blue), var(--comet));
+    }
+    
+    .scroll-to-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .scroll-to-top-btn:active {
+        transform: translateY(-1px);
+    }
+</style>
+
+<script>
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+# robots.txt for Cosmic Velocity Car Dealership
+# https://cosmicvelocity.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl important pages
+Allow: /models/
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+Allow: /cars/
+Allow: /inventory/
+Allow: /vehicles/
+
+# Disallow crawling of private or sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /config/
+
+# Disallow URL parameters that don't affect content
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?page=
+Disallow: /*?session_id=
+Disallow: /*?cart_id=
+
+# Allow specific file types
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Sitemap location
+Sitemap: https://cosmicvelocity.com/sitemap.xml
+
+# Specific rules for major search engines
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Common AI crawlers
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 2
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Pinterest
+Allow: /
+Crawl-delay: 1
+
+# Block malicious bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+User-agent: SearchmetricsBot
+Disallow: /
+
+# Block archive crawlers
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+# Block email harvesters
+User-agent: EmailCollector
+Disallow: /
+
+User-agent: EmailSiphon
+Disallow: /
+
+User-agent: EmailWolf
+Disallow: /
+
+User-agent: ExtractorPro
+Disallow: /
+
+User-agent: CherryPicker
+Disallow: /
+
+User-agent: WebBandit
+Disallow: /
+
+# Block other unwanted bots
+User-agent: WebCopier
+Disallow: /
+
+User-agent: Teleport
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: Microsoft.URL.Control
+Disallow: /
+
+User-agent: Xenu
+Disallow: /
+
+User-agent: larbin
+Disallow: /
+
+User-agent: libwww
+Disallow: /
+
+User-agent: ZyBorg
+Disallow: /
+
+# Host parameter for multi-domain setups
+Host: cosmicvelocity.com
+
+# Crawl delay for all other bots
+Crawl-delay: 2
